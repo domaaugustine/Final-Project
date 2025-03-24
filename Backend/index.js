@@ -22,15 +22,14 @@ const userApp=require('./APIs/UserApi');
 
 //inbuilt middleware for post req
 app.use(exp.json());
-
+app.get('/', (req, res) => {
+    res.send("Server is running!");
+});
 // assing port-url for the diff api's
 app.use("/user-api",userApp);
 app.use('/admin-api',adminApp);
 app.use("/author-api",authorApp);
 
-app.get('/', (req, res) => {
-    res.send("Server is running!");
-});
 
 // connecting mongoose
 mongoose.connect(url)
