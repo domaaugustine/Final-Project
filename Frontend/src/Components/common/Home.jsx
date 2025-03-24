@@ -6,6 +6,7 @@ import axios from 'axios'
 
 function Home() {
   const { currentUser, setCurrentUser } = useContext(UserAuthorContextObj)
+  console.log(import.meta.env.VITE_CLERK_PUBLISHABLE_KEY);
 
   const { isSignedIn, user, isLoaded } = useUser()
   const [role,setRole]=useState(false);

@@ -13,6 +13,7 @@ if (!PUBLISHABLE_KEY) {
 }
 
 function Root() {
+  console.log(PUBLISHABLE_KEY);
   return (
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
     <div>

@@ -28,6 +28,10 @@ app.use("/user-api",userApp);
 app.use('/admin-api',adminApp);
 app.use("/author-api",authorApp);
 
+app.get('/', (req, res) => {
+    res.send("Server is running!");
+});
+
 // connecting mongoose
 mongoose.connect(url)
 .then(()=>{app.listen(port,()=>{console.log(`server started at port: ${port}`)});
