@@ -1,0 +1,25 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root{
+  --royal-blue:#002349;
+  --blue:#96c2db;
+  --grey:#E5EDF1;
+  --white:#FFFFFF;
+  --cream:#FFFDF2;
+  --white-smoke:#F0F0F0;
+  --bright-red:#e7473c;
+}
+body{
+  /* background-color: var(--white-smoke); */
+  background-color: #fff;
+  /* background-color: black */
+}
+.header{
+   margin-bottom: 50px;
+}
+.header a{
+  text-decoration: none;
+}

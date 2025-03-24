@@ -1,0 +1,138 @@
+### create author
+POST http://localhost:3000/author-api/author
+Content-Type: application/json
+
+{
+  "role": "author",
+  "firstName": "author-1",
+  "lastName": "author-1",
+  "email": "author1@gmail.com",
+  "profileImageUrl": "author-image",
+  "isActive": true
+}
+
+###create user
+POST http://localhost:3000/user-api/user
+Content-Type: application/json
+
+{
+  "role": "user",
+  "firstName": "user-2",
+  "lastName": "user-2",
+  "email": "user2@gmail.com",
+  "profileImageUrl": "user-1",
+  "isActive": true
+}
+
+
+
+###post new article
+POST http://localhost:3000/author-api/article
+Content-Type: application/json
+
+{
+    "authorData":{
+        "nameOfAuthor":"author-1",
+        "email":"author1@gmail.com",
+        "profileImageUrl":"auhtor-1"
+    },
+    "articleId":"{{$timestamp}}",
+    "title":"Fundamentals of ml",
+    "category":"test",
+    "content":"JavaScript often abbreviated as JS,is a programming language and core technology of the World Wide Web, alongside HTML and CSS. As of 2024, 98.9% of websites use JavaScript on the client side for webpage behavior often incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine to execute the code on users' devices./n JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript standard It has dynamic typing, prototype-based object-orientation, and first-class functions. It is multi-paradigm, supporting event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures, and the Document Object Model (DOM)./n The ECMAScript standard does not include any input/output (I/O), such as networking, storage, or graphics facilities. In practice, the web browser or other runtime system provides JavaScript APIs for I/O.",
+    "dateOfCreation":"{{$datetime iso8601}}",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "isArticleActive":true,
+    "comments":[]
+   
+}
+
+
+
+
+### Read all articles by user
+GET http://localhost:3000/user-api/articles
+
+
+### Read all articles by author
+GET http://localhost:3000/author-api/articles
+
+
+
+### edit article by id
+PUT http://localhost:3000/author-api/article/1738331309
+Content-Type: application/json
+
+{
+    "_id": "679b92b2afa3fc1402465764",
+    "authorData":{
+        "nameOfAuthor":"",
+        "email":"",
+        "profileImageUrl":""
+    },
+    "articleId":"{{$timestamp}}",
+    "title":"Fundamentals of js",
+    "category":"test",
+    "content":"JavaScript often abbreviated as JS,is a programming language and core technology of the World Wide Web, alongside HTML and CSS. As of 2024, 98.9% of websites use JavaScript on the client side for webpage behavior often incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine to execute the code on users' devices./n JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript standard It has dynamic typing, prototype-based object-orientation, and first-class functions. It is multi-paradigm, supporting event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures, and the Document Object Model (DOM)./n The ECMAScript standard does not include any input/output (I/O), such as networking, storage, or graphics facilities. In practice, the web browser or other runtime system provides JavaScript APIs for I/O.",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "isArticleActive":true,
+    "comments":[]
+   
+}
+
+### post comment by article id
+PUT http://localhost:3000/user-api/comment/1738859042444
+Content-Type: application/json
+
+{
+      "nameOfUser": "palli",
+      "comment": "it is soo cool."
+    
+}
+
+### delete atricle by article id
+PUT http://localhost:3000/author-api/articles/articleId
+Content-Type: application/json
+
+{
+    "_id": "679b92b2afa3fc1402465764",
+    "authorData":{
+        "nameOfAuthor":"",
+        "email":"",
+        "profileImageUrl":""
+    },
+    "articleId":"{{$timestamp}}",
+    "title":"Fundamentals of js",
+    "category":"test",
+    "content":"JavaScript often abbreviated as JS,is a programming language and core technology of the World Wide Web, alongside HTML and CSS. As of 2024, 98.9% of websites use JavaScript on the client side for webpage behavior often incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine to execute the code on users' devices./n JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript standard It has dynamic typing, prototype-based object-orientation, and first-class functions. It is multi-paradigm, supporting event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures, and the Document Object Model (DOM)./n The ECMAScript standard does not include any input/output (I/O), such as networking, storage, or graphics facilities. In practice, the web browser or other runtime system provides JavaScript APIs for I/O.",
+    "dateOfCreation":"{{$datetime iso8601}}",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "isArticleActive":false,
+    "comments":[]
+   
+}
+
+### test admin
+post http://localhost:3000/admin-api/admin
+Content-Type: application/json
+
+{
+   "role": "user",
+  "firstName": "admin-1",
+  "lastName": "reddy",
+  "email": "admin@gmail.com",
+  "profileImageUrl": "alterwait",
+  "isActive": true
+}
+
+###get details
+get http://localhost:3000/admin-api/getUserAuthorDetails
+
+###edit activeState
+post http://localhost:3000/admin-api/active
+Content-Type: application/json
+
+{
+  "role": "user",
+  "email": "rkreddyg115@gmail.com"
+}
